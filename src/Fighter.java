@@ -6,6 +6,9 @@ public class Fighter extends Aircraft {
         this.type = type;
     }
 
+    public FighterTypes getFighterType() { return type; }
+    public void setFighterType(FighterTypes fighterType) { type = fighterType; }
+
     @Override
     public String toString(){
         return String.format("Истребитель\nМодель: %s\nГод производства: %d\nТип двигателя: %s\n" +

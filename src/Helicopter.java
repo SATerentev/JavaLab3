@@ -9,6 +9,11 @@ public class Helicopter extends Aircraft {
         this.bladesCount = bladesCount;
     }
 
+    public int getBladesCount() { return bladesCount; }
+    public void setBladesCount(int bladesCount){
+        if (bladesCount > 0 && bladesCount < 100) this.bladesCount = bladesCount;
+    }
+
     @Override
     public String toString(){
         return String.format("Вертолёт\nМодель: %s\nГод производства: %d\nТип двигателя: %s\n" +

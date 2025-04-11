@@ -12,6 +12,16 @@ public class Airplane extends Aircraft {
         this.flightRange = flightRange;
     }
 
+    public int getPassengersCount() { return passengersCount; }
+    public int getFlightRange() { return flightRange; }
+
+    public void setPassengersCount(int passengersCount){
+        if (passengersCount > 0 && passengersCount < 1000) this.passengersCount = passengersCount;
+    }
+    public void setFlightRange(int flightRange){
+        if (flightRange > 0 && flightRange < 100000) this.flightRange = flightRange;
+    }
+
     @Override
     public String toString(){
         return String.format("Самолёт\nМодель: %s\nГод производства: %d\nТип двигателя: %s\n" +
