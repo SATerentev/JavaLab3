@@ -1,39 +1,18 @@
+import java.security.InvalidParameterException;
+
 public abstract class Aircraft {
-    protected String model;
+    protected ModelNames model;
     protected int productionYear;
     protected int crewCount;
-    protected String engineType;
+    protected EngineTypes engineType;
 
-    public String getModel(){
-        return model;
-    }
+    public Aircraft(ModelNames model, int productionYear, int crewCount, EngineTypes engineType){
+        if (productionYear < 0 || productionYear > java.time.Year.now().getValue() && crewCount < 0 || crewCount > 100)
+            throw new InvalidParameterException();
 
-    public void setModel(String model){
         this.model = model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public void setProductionYear(int productionYear) {
         this.productionYear = productionYear;
-    }
-
-    public int getCrewCount() {
-        return crewCount;
-    }
-
-    public void setCrewCount(int crewCount) {
         this.crewCount = crewCount;
-    }
-
-    public String getEngineType() {
-        return engineType;
-    }
-
-    public void setEngineType(String engineType) {
         this.engineType = engineType;
     }
 }
-;
