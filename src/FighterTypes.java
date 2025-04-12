@@ -1,4 +1,10 @@
 public enum FighterTypes{
-    // TODO: Сделать классы истребителей
-    MP
+    INTERCEPTOR,
+    FIGHTER_BOMBER,
+    MULTIROLE,
+    STEALTH,
+    CARRIER_BASED,
+    RECONNAISSANCE,
+    AIR_SUPERIORITY;
+
 }

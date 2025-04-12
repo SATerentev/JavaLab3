@@ -1,4 +1,12 @@
 public enum EngineTypes {
-    // TODO: Сделать типы двигателей
-    Reactive
+    PISTON,
+    TURBOPROP,
+    TURBOJET,
+    TURBOFAN,
+    TURBOSHAFT,
+    RAMJET,
+    SCRAMJET,
+    ELECTRIC,
+    HYBRID;
+
 }

@@ -23,8 +23,18 @@ public class Airplane extends Aircraft {
     }
 
     @Override
+    public boolean equals(Object object){
+        if (!(object instanceof Airplane)) return false;
+        if (object == null) return false;
+        return ((Airplane) object).getModel().equals(this.getModel()) && ((Airplane) object).getProductionYear() == this.getProductionYear() &&
+                ((Airplane) object).getEngineType().equals(this.getEngineType()) && ((Airplane) object).getCrewCount() == this.getCrewCount() &&
+                ((Airplane) object).passengersCount == this.passengersCount && ((Airplane) object).flightRange == this.flightRange;
+    }
+
+    @Override
     public String toString(){
         return String.format("Самолёт\nМодель: %s\nГод производства: %d\nТип двигателя: %s\n" +
-                "Кол-во членов экипажа: %d\nДальность полёта: %s\nКол-во пассажиров: %d", model, productionYear, engineType, crewCount, flightRange, passengersCount);
+                "Кол-во членов экипажа: %d\nДальность полёта: %s\nКол-во пассажиров: %d", this.getModel(), this.getProductionYear(),
+                this.getEngineType(), this.getCrewCount(), flightRange, passengersCount);
     }
 }

@@ -1,10 +1,10 @@
 import java.security.InvalidParameterException;
 
 public abstract class Aircraft {
-    protected ModelNames model;
-    protected int productionYear;
-    protected int crewCount;
-    protected EngineTypes engineType;
+    private ModelNames model;
+    private int productionYear;
+    private int crewCount;
+    private EngineTypes engineType;
 
     protected Aircraft(ModelNames model, int productionYear, int crewCount, EngineTypes engineType){
         if (productionYear < 0 || productionYear > java.time.Year.now().getValue() && crewCount < 0 || crewCount > 100)
