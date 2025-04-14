@@ -7,7 +7,7 @@ public abstract class Aircraft {
     private EngineTypes engineType;
 
     protected Aircraft(ModelNames model, int productionYear, int crewCount, EngineTypes engineType){
-        if (productionYear < 0 || productionYear > java.time.Year.now().getValue() && crewCount < 0 || crewCount > 100)
+        if ((productionYear <= 1700 || productionYear > java.time.Year.now().getValue()) || (crewCount <= 0 || crewCount > 100))
             throw new InvalidParameterException();
 
         this.model = model;
@@ -24,7 +24,7 @@ public abstract class Aircraft {
     public void setModel(ModelNames model) { this.model = model; }
     public void setEngineType(EngineTypes engineType) { this.engineType = engineType; }
     public void setProductionYear(int productionYear){
-        if (productionYear > 0 && productionYear < java.time.Year.now().getValue()) this.productionYear = productionYear;
+        if (productionYear > 1700 && productionYear < java.time.Year.now().getValue()) this.productionYear = productionYear;
     }
     public void setCrewCount(int crewCount){
         if (crewCount > 0 && crewCount < 100) this.crewCount = crewCount;

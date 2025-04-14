@@ -5,7 +5,7 @@ public class Helicopter extends Aircraft {
 
     public Helicopter(ModelNames model, int productionYear, EngineTypes engineType, int crewCount, int bladesCount){
         super(model, productionYear, crewCount, engineType);
-        if (bladesCount < 0 || bladesCount > 100) throw new InvalidParameterException();
+        if (bladesCount <= 0 || bladesCount >= 100) throw new InvalidParameterException();
         this.bladesCount = bladesCount;
     }
 

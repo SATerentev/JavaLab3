@@ -1,13 +1,12 @@
 import java.security.InvalidParameterException;
 
 public class Airplane extends Aircraft {
-    protected int flightRange;
+    private int flightRange;
     private int passengersCount;
 
-    // TODO: добавить проверки в конструктор
     public Airplane(ModelNames model, int productionYear, EngineTypes engineType, int crewCount, int passengersCount, int flightRange){
         super(model, productionYear, crewCount, engineType);
-        if (passengersCount < 0 || passengersCount > 10000 || flightRange < 0 || flightRange > 100000) throw new InvalidParameterException();
+        if (passengersCount < 0 || passengersCount >= 1000 || flightRange <= 0 || flightRange > 100000) throw new InvalidParameterException();
         this.passengersCount = passengersCount;
         this.flightRange = flightRange;
     }
@@ -16,10 +15,10 @@ public class Airplane extends Aircraft {
     public int getFlightRange() { return flightRange; }
 
     public void setPassengersCount(int passengersCount){
-        if (passengersCount > 0 && passengersCount < 1000) this.passengersCount = passengersCount;
+        if (passengersCount >= 0 && passengersCount < 1000) this.passengersCount = passengersCount;
     }
     public void setFlightRange(int flightRange){
-        if (flightRange > 0 && flightRange < 100000) this.flightRange = flightRange;
+        if (flightRange > 0 && flightRange <= 100000) this.flightRange = flightRange;
     }
 
     @Override
