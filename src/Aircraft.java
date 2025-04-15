@@ -6,7 +6,7 @@ public abstract class Aircraft {
     private int crewCount;
     private EngineTypes engineType;
 
-    protected Aircraft(ModelNames model, int productionYear, int crewCount, EngineTypes engineType){
+    protected Aircraft (ModelNames model, int productionYear, int crewCount, EngineTypes engineType) {
         if ((productionYear <= 1700 || productionYear > java.time.Year.now().getValue()) || (crewCount <= 0 || crewCount > 100))
             throw new InvalidParameterException();
 
